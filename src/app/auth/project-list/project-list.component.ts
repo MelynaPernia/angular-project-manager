@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectListService} from "./services/project-list.service";
 import {Project} from './models/project.model'
+// import {Project} from '../models/project.model'; //modelos de datos
 
 @Component({
   selector: 'app-project-list',
@@ -10,21 +11,26 @@ import {Project} from './models/project.model'
 export class ProjectListComponent implements OnInit {
   isLoading = true;
   projects: Array<Project> = [];
+  // inyectando para usar el servicio
   constructor(private _projectListService: ProjectListService) { }
 
   ngOnInit() {
-    // this._projectListService.getAll().subscribe(
-    //   (data: Project[]) => {
-    //     //next
-    //     this.projects = data;
-    //   },
-    //   err => {
-    //     console.log(err)
-    //   },
-    //   ()=> {
-    //     console.log('Finished')
-    //   }
-    // );
+    // console.log('iniciando')
+    //Observable , donde usas el subscribe
+    this._projectListService.getAll().subscribe(
+      (data: Project[]) => {
+        console.log(data)
+
+      },
+      err => {
+        console.log(err)
+      },
+      ()=> {
+        console.log('Finish')
+      }
+
+    )
+
 
   }
 

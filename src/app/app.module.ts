@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ProjectListComponent } from './auth/project-list/project-list.component';
 import { HeaderComponent } from './common/header/header.component';
 import { LoaderComponent } from './common/loader/loader.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http"; //Importarlo en el imports
 import {ProjectListService} from "./auth/project-list/services/project-list.service";
 
 
